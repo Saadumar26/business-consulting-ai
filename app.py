@@ -316,308 +316,272 @@ st.set_page_config(
 
 
 # ==================================================
-# MODERN CUSTOM CSS
+# CUSTOM CSS
 # ==================================================
 
 st.markdown(
     """
-    <style>
-
-    /* ----------------------------------------------
-       GLOBAL
-    ---------------------------------------------- */
-
-    .stApp {
-        background:
-            radial-gradient(
-                circle at 10% 0%,
-                rgba(99, 102, 241, 0.08),
-                transparent 28%
-            ),
-            radial-gradient(
-                circle at 90% 10%,
-                rgba(14, 165, 233, 0.07),
-                transparent 25%
-            ),
-            #f8fafc;
-    }
+<style>
 
-    .block-container {
-        padding-top: 2rem;
-        padding-bottom: 3rem;
-        max-width: 1250px;
-    }
+/* ==============================
+   GLOBAL
+================================= */
 
+.stApp {
+    background-color: #f8fafc;
+}
 
-    /* ----------------------------------------------
-       HEADER
-    ---------------------------------------------- */
+.block-container {
+    max-width: 1250px;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+}
 
-    .hero {
-        padding: 35px 40px;
-        border-radius: 24px;
-        margin-bottom: 30px;
 
-        background:
-            linear-gradient(
-                135deg,
-                rgba(79, 70, 229, 0.95),
-                rgba(37, 99, 235, 0.90)
-            );
-
-        color: white;
-
-        box-shadow:
-            0 20px 45px rgba(37, 99, 235, 0.20);
-    }
-
-    .hero-badge {
-        display: inline-block;
+/* ==============================
+   HERO
+================================= */
 
-        padding: 6px 12px;
-
-        border-radius: 999px;
-
-        background: rgba(255,255,255,0.15);
-
-        font-size: 13px;
-        font-weight: 600;
-
-        margin-bottom: 14px;
-    }
+.hero {
+    background: linear-gradient(
+        135deg,
+        #4f46e5 0%,
+        #2563eb 100%
+    );
 
-    .hero-title {
-        font-size: 42px;
-        font-weight: 800;
-        letter-spacing: -1px;
-        margin: 0;
-    }
+    padding: 40px;
+    border-radius: 24px;
 
-    .hero-subtitle {
-        font-size: 17px;
-        opacity: 0.90;
-        margin-top: 10px;
-        max-width: 720px;
-        line-height: 1.6;
-    }
+    margin-bottom: 30px;
 
+    color: white;
 
-    /* ----------------------------------------------
-       SECTION HEADERS
-    ---------------------------------------------- */
+    box-shadow:
+        0 15px 35px rgba(37, 99, 235, 0.20);
+}
 
-    .section-title {
-        font-size: 25px;
-        font-weight: 750;
-        color: #111827;
-        margin-top: 12px;
-        margin-bottom: 5px;
-    }
+.hero-badge {
+    display: inline-block;
 
-    .section-description {
-        color: #6b7280;
-        font-size: 14px;
-        margin-bottom: 20px;
-    }
+    padding: 6px 12px;
 
+    border-radius: 999px;
 
-    /* ----------------------------------------------
-       AGENT CARDS
-    ---------------------------------------------- */
+    background: rgba(255,255,255,0.16);
 
-    .agent-card {
-        background: white;
+    font-size: 12px;
+    font-weight: 700;
 
-        border: 1px solid #e5e7eb;
+    margin-bottom: 14px;
+}
 
-        border-radius: 16px;
+.hero-title {
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1.15;
 
-        padding: 16px;
+    margin-bottom: 10px;
+}
 
-        margin-bottom: 12px;
+.hero-subtitle {
+    font-size: 16px;
 
-        box-shadow:
-            0 4px 14px rgba(15, 23, 42, 0.04);
+    line-height: 1.6;
 
-        transition: all 0.2s ease;
-    }
+    max-width: 750px;
 
-    .agent-card:hover {
-        transform: translateY(-2px);
+    opacity: 0.9;
+}
 
-        box-shadow:
-            0 8px 20px rgba(15, 23, 42, 0.08);
-    }
 
-    .agent-icon {
-        font-size: 24px;
-        margin-right: 8px;
-    }
+/* ==============================
+   SECTION TITLES
+================================= */
 
-    .agent-name {
-        font-weight: 700;
-        color: #111827;
-        font-size: 15px;
-    }
+.section-title {
+    font-size: 25px;
+    font-weight: 750;
 
-    .agent-description {
-        color: #6b7280;
-        font-size: 12px;
-        margin-top: 4px;
-    }
+    color: #111827;
 
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
 
-    /* ----------------------------------------------
-       ACTIVE AGENT
-    ---------------------------------------------- */
+.section-description {
+    color: #6b7280;
 
-    .active-agent {
-        background:
-            linear-gradient(
-                135deg,
-                rgba(79, 70, 229, 0.08),
-                rgba(59, 130, 246, 0.05)
-            );
+    font-size: 14px;
 
-        border: 1px solid rgba(79, 70, 229, 0.35);
+    margin-bottom: 20px;
+}
 
-        border-radius: 16px;
 
-        padding: 17px;
+/* ==============================
+   CARDS
+================================= */
 
-        margin-bottom: 12px;
+.card {
+    background: white;
 
-        box-shadow:
-            0 0 0 3px rgba(79, 70, 229, 0.05);
-    }
+    border: 1px solid #e5e7eb;
 
-    .active-label {
-        color: #4f46e5;
-        font-size: 12px;
-        font-weight: 700;
-        margin-top: 5px;
-    }
+    border-radius: 18px;
 
+    padding: 22px;
 
-    /* ----------------------------------------------
-       INPUT CARDS
-    ---------------------------------------------- */
+    margin-bottom: 18px;
 
-    .input-card {
-        background: white;
+    box-shadow:
+        0 5px 18px rgba(15, 23, 42, 0.04);
+}
 
-        border: 1px solid #e5e7eb;
 
-        border-radius: 18px;
+/* ==============================
+   AGENT CARD
+================================= */
 
-        padding: 22px;
+.agent-card {
+    background: white;
 
-        margin-bottom: 18px;
+    border: 1px solid #e5e7eb;
 
-        box-shadow:
-            0 5px 18px rgba(15, 23, 42, 0.04);
-    }
+    border-radius: 14px;
 
+    padding: 14px 15px;
 
-    /* ----------------------------------------------
-       STATUS BOX
-    ---------------------------------------------- */
+    margin-bottom: 10px;
+}
 
-    .running-box {
-        padding: 18px;
+.agent-title {
+    font-size: 14px;
 
-        border-radius: 16px;
+    font-weight: 700;
 
-        background:
-            linear-gradient(
-                135deg,
-                rgba(79, 70, 229, 0.08),
-                rgba(14, 165, 233, 0.06)
-            );
+    color: #111827;
+}
 
-        border: 1px solid rgba(79, 70, 229, 0.20);
+.agent-description {
+    font-size: 12px;
 
-        margin-bottom: 20px;
-    }
+    color: #6b7280;
 
+    margin-top: 3px;
+}
 
-    /* ----------------------------------------------
-       REPORT
-    ---------------------------------------------- */
 
-    .report-header {
-        background: white;
+/* ==============================
+   ACTIVE AGENT
+================================= */
 
-        border: 1px solid #e5e7eb;
+.active-agent {
+    background: #eef2ff;
 
-        border-radius: 18px;
+    border: 1px solid #6366f1;
 
-        padding: 20px 24px;
+    border-radius: 14px;
 
-        margin-bottom: 18px;
+    padding: 15px;
 
-        box-shadow:
-            0 5px 18px rgba(15, 23, 42, 0.04);
-    }
+    margin-bottom: 10px;
 
+    box-shadow:
+        0 0 0 3px rgba(99,102,241,0.08);
+}
 
-    /* ----------------------------------------------
-       BUTTONS
-    ---------------------------------------------- */
+.active-title {
+    font-size: 14px;
 
-    div.stButton > button {
+    font-weight: 700;
 
-        border-radius: 12px;
+    color: #3730a3;
+}
 
-        font-weight: 700;
+.active-status {
+    font-size: 11px;
 
-        padding: 12px 20px;
+    font-weight: 700;
 
-        transition: all 0.2s ease;
-    }
+    color: #4f46e5;
 
-    div.stButton > button:hover {
-        transform: translateY(-1px);
-    }
+    margin-top: 5px;
+}
 
 
-    /* ----------------------------------------------
-       SIDEBAR
-    ---------------------------------------------- */
+/* ==============================
+   SIDEBAR
+================================= */
 
-    section[data-testid="stSidebar"] {
+section[data-testid="stSidebar"] {
+    background-color: #ffffff;
 
-        background:
-            linear-gradient(
-                180deg,
-                #ffffff 0%,
-                #f8fafc 100%
-            );
+    border-right: 1px solid #e5e7eb;
+}
 
-        border-right: 1px solid #e5e7eb;
-    }
 
+/* ==============================
+   BUTTON
+================================= */
 
-    /* ----------------------------------------------
-       FOOTER
-    ---------------------------------------------- */
+.stButton > button {
+    border-radius: 12px;
 
-    .footer {
-        text-align: center;
+    font-weight: 700;
 
-        color: #9ca3af;
+    min-height: 48px;
+}
 
-        font-size: 12px;
 
-        margin-top: 50px;
+/* ==============================
+   INPUTS
+================================= */
 
-        padding-top: 20px;
+div[data-baseweb="input"] > div,
+div[data-baseweb="textarea"] > div {
+    border-radius: 10px;
+}
 
-        border-top: 1px solid #e5e7eb;
-    }
 
-    </style>
-    """,
+/* ==============================
+   REPORT
+================================= */
+
+.report-card {
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 18px;
+
+    padding: 28px;
+
+    margin-top: 10px;
+
+    box-shadow:
+        0 5px 18px rgba(15, 23, 42, 0.04);
+}
+
+
+/* ==============================
+   FOOTER
+================================= */
+
+.footer {
+    text-align: center;
+
+    color: #9ca3af;
+
+    font-size: 12px;
+
+    margin-top: 50px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #e5e7eb;
+}
+
+</style>
+""",
     unsafe_allow_html=True,
 )
 
@@ -628,23 +592,23 @@ st.markdown(
 
 st.markdown(
     """
-    <div class="hero">
+<div class="hero">
 
-        <div class="hero-badge">
-            🤖 MULTI-AGENT AI SYSTEM
-        </div>
-
-        <div class="hero-title">
-            AI Business Consulting Team
-        </div>
-
-        <div class="hero-subtitle">
-            Get structured business analysis from a team of
-            specialized AI consultants powered by CrewAI and Groq.
-        </div>
-
+    <div class="hero-badge">
+        🤖 MULTI-AGENT AI SYSTEM
     </div>
-    """,
+
+    <div class="hero-title">
+        AI Business Consulting Team
+    </div>
+
+    <div class="hero-subtitle">
+        Get structured business analysis from a team of
+        specialized AI consultants powered by CrewAI and Groq.
+    </div>
+
+</div>
+""",
     unsafe_allow_html=True,
 )
 
@@ -661,53 +625,25 @@ with st.sidebar:
 
     st.divider()
 
-    agents = [
-        (
-            "🔎",
-            "Market Researcher",
-            "Market & industry analysis",
-        ),
-        (
-            "👥",
-            "Customer & Competitor Analyst",
-            "Customers and competition",
-        ),
-        (
-            "📊",
-            "Business Analyst",
-            "Business performance analysis",
-        ),
-        (
-            "🧠",
-            "Strategy Consultant",
-            "Strategic recommendations",
-        ),
-        (
-            "📝",
-            "Report Writer",
-            "Final consulting report",
-        ),
-    ]
+    # Agent 1
+    st.markdown("### 🔎 Market Researcher")
+    st.caption("Market & industry analysis")
 
-    for icon, name, description in agents:
+    # Agent 2
+    st.markdown("### 👥 Customer & Competitor Analyst")
+    st.caption("Customers and competition")
 
-        st.markdown(
-            f"""
-            <div class="agent-card">
+    # Agent 3
+    st.markdown("### 📊 Business Analyst")
+    st.caption("Business performance analysis")
 
-                <div>
-                    <span class="agent-icon">{icon}</span>
-                    <span class="agent-name">{name}</span>
-                </div>
+    # Agent 4
+    st.markdown("### 🧠 Strategy Consultant")
+    st.caption("Strategic recommendations")
 
-                <div class="agent-description">
-                    {description}
-                </div>
-
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
+    # Agent 5
+    st.markdown("### 📝 Report Writer")
+    st.caption("Final consulting report")
 
     st.divider()
 
@@ -738,21 +674,22 @@ st.markdown(
 )
 
 st.markdown(
-    """
-    <div class="section-description">
-        Provide your business details so the consulting team
-        can build a tailored strategic analysis.
-    </div>
-    """,
+    '<div class="section-description">'
+    'Provide your business details so the consulting team '
+    'can build a tailored strategic analysis.'
+    '</div>',
     unsafe_allow_html=True,
 )
 
 
 # ==================================================
-# BASIC BUSINESS INFORMATION
+# BASIC INFORMATION
 # ==================================================
 
-st.markdown('<div class="input-card">', unsafe_allow_html=True)
+st.markdown(
+    '<div class="card">',
+    unsafe_allow_html=True,
+)
 
 col1, col2 = st.columns(2)
 
@@ -770,14 +707,20 @@ with col2:
         placeholder="e.g. Food Delivery",
     )
 
-st.markdown("</div>", unsafe_allow_html=True)
+st.markdown(
+    '</div>',
+    unsafe_allow_html=True,
+)
 
 
 # ==================================================
-# BUSINESS DESCRIPTION
+# DESCRIPTION
 # ==================================================
 
-st.markdown('<div class="input-card">', unsafe_allow_html=True)
+st.markdown(
+    '<div class="card">',
+    unsafe_allow_html=True,
+)
 
 business_description = st.text_area(
     "📄 Business Description",
@@ -789,7 +732,10 @@ business_description = st.text_area(
     height=140,
 )
 
-st.markdown("</div>", unsafe_allow_html=True)
+st.markdown(
+    '</div>',
+    unsafe_allow_html=True,
+)
 
 
 # ==================================================
@@ -802,17 +748,18 @@ st.markdown(
 )
 
 st.markdown(
-    """
-    <div class="section-description">
-        Help the consultants understand who you serve and where
-        your business operates.
-    </div>
-    """,
+    '<div class="section-description">'
+    'Help the consultants understand who you serve and where '
+    'your business operates.'
+    '</div>',
     unsafe_allow_html=True,
 )
 
 
-st.markdown('<div class="input-card">', unsafe_allow_html=True)
+st.markdown(
+    '<div class="card">',
+    unsafe_allow_html=True,
+)
 
 col1, col2 = st.columns(2)
 
@@ -830,7 +777,10 @@ with col2:
         placeholder="e.g. Lahore, Pakistan",
     )
 
-st.markdown("</div>", unsafe_allow_html=True)
+st.markdown(
+    '</div>',
+    unsafe_allow_html=True,
+)
 
 
 # ==================================================
@@ -843,16 +793,17 @@ st.markdown(
 )
 
 st.markdown(
-    """
-    <div class="section-description">
-        Tell the consulting team what problem you want to solve.
-    </div>
-    """,
+    '<div class="section-description">'
+    'Tell the consulting team what problem you want to solve.'
+    '</div>',
     unsafe_allow_html=True,
 )
 
 
-st.markdown('<div class="input-card">', unsafe_allow_html=True)
+st.markdown(
+    '<div class="card">',
+    unsafe_allow_html=True,
+)
 
 challenge = st.text_area(
     "Main Business Challenge",
@@ -864,7 +815,10 @@ challenge = st.text_area(
     height=120,
 )
 
-st.markdown("</div>", unsafe_allow_html=True)
+st.markdown(
+    '</div>',
+    unsafe_allow_html=True,
+)
 
 
 # ==================================================
@@ -897,18 +851,12 @@ st.divider()
 
 st.markdown(
     """
-    <div style="
-        text-align:center;
-        margin-bottom:10px;
-    ">
-        <span style="
-            color:#6b7280;
-            font-size:14px;
-        ">
-            Ready to consult your AI strategy team?
-        </span>
-    </div>
-    """,
+<div style="text-align:center; margin-bottom:10px;">
+    <span style="color:#6b7280; font-size:14px;">
+        Ready to consult your AI strategy team?
+    </span>
+</div>
+""",
     unsafe_allow_html=True,
 )
 
@@ -926,7 +874,7 @@ generate = st.button(
 if generate:
 
     # ----------------------------------------------
-    # Validate required fields
+    # VALIDATION
     # ----------------------------------------------
 
     if not business_name.strip():
@@ -949,7 +897,7 @@ if generate:
 
 
     # ----------------------------------------------
-    # Prepare inputs
+    # INPUTS
     # ----------------------------------------------
 
     inputs = {
@@ -971,147 +919,125 @@ if generate:
 
 
     # ==================================================
-    # CONSULTING TEAM STATUS
+    # AGENT WORKFLOW
     # ==================================================
 
-    st.markdown(
-        """
-        <div class="running-box">
-
-            <strong>🤖 Consulting team is working...</strong>
-
-            <div style="
-                color:#6b7280;
-                font-size:13px;
-                margin-top:5px;
-            ">
-                Your business is being analyzed by multiple
-                specialized AI consultants.
-            </div>
-
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
-
-
-    # ==================================================
-    # AGENT PROGRESS
-    # ==================================================
+    st.divider()
 
     st.markdown(
         '<div class="section-title">🔄 Agent Workflow</div>',
         unsafe_allow_html=True,
     )
 
-    progress_placeholder = st.empty()
+    st.caption(
+        "Your AI consulting team is processing the request."
+    )
 
 
-    # ----------------------------------------------
-    # Initial Agent State
-    # ----------------------------------------------
+    # --------------------------------------------------
+    # Workflow containers
+    # --------------------------------------------------
 
-    agent_steps = [
-        ("🔎", "Market Researcher", "Analyzing market and industry"),
-        (
-            "👥",
-            "Customer & Competitor Analyst",
-            "Analyzing customers and competitors",
-        ),
-        (
-            "📊",
-            "Business Analyst",
-            "Evaluating business situation",
-        ),
-        (
-            "🧠",
-            "Strategy Consultant",
-            "Developing strategic recommendations",
-        ),
-        (
-            "📝",
-            "Report Writer",
-            "Preparing final consulting report",
-        ),
-    ]
+    agent_placeholder = st.empty()
 
 
-    # ----------------------------------------------
-    # Show workflow
-    # ----------------------------------------------
+    def render_agent_workflow(active_agent=None, completed=False):
 
-    def render_agents(active_index):
+        agents = [
+
+            (
+                "🔎",
+                "Market Researcher",
+                "Analyzing market and industry",
+            ),
+
+            (
+                "👥",
+                "Customer & Competitor Analyst",
+                "Analyzing customers and competition",
+            ),
+
+            (
+                "📊",
+                "Business Analyst",
+                "Evaluating the business",
+            ),
+
+            (
+                "🧠",
+                "Strategy Consultant",
+                "Developing strategic recommendations",
+            ),
+
+            (
+                "📝",
+                "Report Writer",
+                "Preparing final report",
+            ),
+
+        ]
 
         html = ""
 
-        for index, (icon, name, description) in enumerate(agent_steps):
+        for icon, name, description in agents:
 
-            if index < active_index:
-
-                html += f"""
-                <div class="agent-card">
-
-                    <div>
-                        <span class="agent-icon">✅</span>
-                        <span class="agent-name">
-                            {name}
-                        </span>
-                    </div>
-
-                    <div class="agent-description">
-                        Completed
-                    </div>
-
-                </div>
-                """
-
-            elif index == active_index:
+            if completed:
 
                 html += f"""
-                <div class="active-agent">
+<div class="agent-card">
 
-                    <div>
-                        <span class="agent-icon">{icon}</span>
-                        <span class="agent-name">
-                            {name}
-                        </span>
-                    </div>
+    <div class="agent-title">
+        ✅ {icon} {name}
+    </div>
 
-                    <div class="active-label">
-                        🔵 CURRENTLY RUNNING
-                    </div>
+    <div class="agent-description">
+        Completed
+    </div>
 
-                    <div class="agent-description">
-                        {description}...
-                    </div>
+</div>
+"""
 
-                </div>
-                """
+            elif name == active_agent:
+
+                html += f"""
+<div class="active-agent">
+
+    <div class="active-title">
+        🔵 {icon} {name}
+    </div>
+
+    <div class="active-status">
+        CURRENTLY RUNNING
+    </div>
+
+    <div class="agent-description">
+        {description}...
+    </div>
+
+</div>
+"""
 
             else:
 
                 html += f"""
-                <div class="agent-card">
+<div class="agent-card">
 
-                    <div>
-                        <span class="agent-icon">⏳</span>
-                        <span class="agent-name">
-                            {name}
-                        </span>
-                    </div>
+    <div class="agent-title">
+        ⏳ {icon} {name}
+    </div>
 
-                    <div class="agent-description">
-                        Waiting
-                    </div>
+    <div class="agent-description">
+        Waiting
+    </div>
 
-                </div>
-                """
+</div>
+"""
 
         return html
 
 
     # ==================================================
-    # RUN CREWAI
+    # CREWAI EXECUTION
     # ==================================================
 
     with st.status(
@@ -1122,11 +1048,13 @@ if generate:
         try:
 
             # ------------------------------------------
-            # Display workflow stages
+            # Show first agent
             # ------------------------------------------
 
-            progress_placeholder.markdown(
-                render_agents(0),
+            agent_placeholder.markdown(
+                render_agent_workflow(
+                    "Market Researcher"
+                ),
                 unsafe_allow_html=True,
             )
 
@@ -1136,40 +1064,29 @@ if generate:
 
 
             # ------------------------------------------
-            # Create Crew
+            # CREATE CREW
             # ------------------------------------------
 
             crew = create_business_crew()
 
 
             # ------------------------------------------
-            # Run CrewAI
+            # RUN CREW
             # ------------------------------------------
 
-            result = crew.kickoff(inputs=inputs)
+            result = crew.kickoff(
+                inputs=inputs
+            )
 
 
             # ------------------------------------------
-            # Completed
+            # COMPLETED
             # ------------------------------------------
 
-            progress_placeholder.markdown(
-                """
-                <div class="agent-card">
-
-                    <div>
-                        <span class="agent-icon">✅</span>
-                        <span class="agent-name">
-                            Consulting Team
-                        </span>
-                    </div>
-
-                    <div class="agent-description">
-                        All consultants completed their analysis.
-                    </div>
-
-                </div>
-                """,
+            agent_placeholder.markdown(
+                render_agent_workflow(
+                    completed=True
+                ),
                 unsafe_allow_html=True,
             )
 
@@ -1199,47 +1116,42 @@ if generate:
 
 
     # ==================================================
-    # DISPLAY REPORT
+    # REPORT
     # ==================================================
 
     st.divider()
 
     st.markdown(
-        """
-        <div class="report-header">
+        '<div class="section-title">'
+        '📋 Business Strategy Report'
+        '</div>',
+        unsafe_allow_html=True,
+    )
 
-            <div style="
-                font-size:25px;
-                font-weight:750;
-                color:#111827;
-            ">
-                📋 Business Strategy Report
-            </div>
-
-            <div style="
-                color:#6b7280;
-                font-size:14px;
-                margin-top:5px;
-            ">
-                AI-generated strategic analysis based on the
-                information provided.
-            </div>
-
-        </div>
-        """,
+    st.markdown(
+        '<div class="section-description">'
+        'AI-generated strategic analysis based on the '
+        'information provided.'
+        '</div>',
         unsafe_allow_html=True,
     )
 
 
-    # ----------------------------------------------
-    # Report
-    # ----------------------------------------------
+    st.markdown(
+        '<div class="report-card">',
+        unsafe_allow_html=True,
+    )
 
     st.markdown(result.raw)
 
+    st.markdown(
+        '</div>',
+        unsafe_allow_html=True,
+    )
+
 
     # ==================================================
-    # DOWNLOAD REPORT
+    # DOWNLOAD
     # ==================================================
 
     st.divider()
@@ -1259,13 +1171,12 @@ if generate:
 
 st.markdown(
     """
-    <div class="footer">
-
-        💼 AI Business Consulting Team
-        &nbsp;•&nbsp;
-        Powered by CrewAI + Groq + Streamlit
-
-    </div>
-    """,
+<div class="footer">
+    💼 AI Business Consulting Team
+    &nbsp;•&nbsp;
+    Powered by CrewAI + Groq + Streamlit
+</div>
+""",
     unsafe_allow_html=True,
 )
+
